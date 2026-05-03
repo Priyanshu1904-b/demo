@@ -140,7 +140,7 @@ On boot, the backend creates the super-admin if the email does not already exist
 - `backend/src/controllers/*.js`: route handlers for auth, posts, user profile, admin, and super-admin.
 - `backend/src/middleware/auth.js`: JWT verification and role guard.
 - `backend/src/middleware/errorHandler.js`: centralized API error responses.
-- `backend/src/services/otp.service.js`: OTP generation, hashing, verification, and fallback-safe sending.
+- `backend/src/services/otp.service.js`: OTP generation, hashing, verification, and fallback-safe Nodemailer email delivery.
 - `backend/src/services/socket.service.js`: optional notification wrapper.
 - `frontend/src/api/client.js`: Axios instance with access-token refresh.
 - `frontend/src/context/AuthContext.jsx`: frontend auth state and actions.

@@ -11,7 +11,14 @@ const env = {
   jwtRefreshExpiresIn: process.env.JWT_REFRESH_EXPIRES_IN || "7d",
   devOtpMode: process.env.DEV_OTP_MODE !== "false",
   otpExpiresMinutes: Number(process.env.OTP_EXPIRES_MINUTES || 10),
-  otpServiceKey: process.env.OTP_SERVICE_KEY || "",
+  smtp: {
+    host: process.env.SMTP_HOST || "",
+    port: Number(process.env.SMTP_PORT || 587),
+    secure: process.env.SMTP_SECURE === "true",
+    user: process.env.SMTP_USER || "",
+    pass: process.env.SMTP_PASS || "",
+    from: process.env.SMTP_FROM || process.env.SMTP_USER || "no-reply@example.com"
+  },
   superAdmin: {
     name: process.env.SUPER_ADMIN_NAME || "Root Admin",
     email: process.env.SUPER_ADMIN_EMAIL || "root@example.com",
